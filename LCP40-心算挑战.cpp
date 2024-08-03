@@ -10,6 +10,7 @@ public:
          */
         ranges::nth_element(cards, cards.begin() + cnt, std::greater<int>()); 
         int sum = reduce(cards.begin(), cards.begin() + cnt, 0); // 最大的 cnt 个数之和
+
         if(sum % 2 == 0) return sum; 
         
         for(int i = 0; i < cnt; ++i){
@@ -23,6 +24,7 @@ public:
 
         // 如果没有出现max_ele[0]或max_ele[1]之一，则为0；如果没有出现min_ele[0]或min_ele[1]之一，则为0，很巧
         sum = max(sum + max(max_ele[0] - min_ele[1], max_ele[1] - min_ele[0]), 0);
+
         return sum;
     }
 };
